@@ -19,7 +19,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   color: var(--Desaturated-blue);
-  text-align: center;
+  text-align: left;
   line-height: 1.5;
 }
 
@@ -39,7 +39,9 @@ body {
   background-size: contain;
   height: 100vh;
   width: 100%;
-  display: flx;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -50,6 +52,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .card {
@@ -62,9 +67,16 @@ body {
 }
 
 .card > picture {
-  height: 100vh;
   max-height: 220px;
   margin-bottom: 60px;
+  overflow: hidden;
+}
+
+.card > picture img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: top;
+     object-position: top;
 }
 
 .card .info_card {
@@ -79,12 +91,12 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 40px;
+  padding: 0 40px 40px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-.card .info_card p {
+.card .info_card > p {
   padding: 0 30px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -94,8 +106,8 @@ body {
 .card .info_card .plan {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-columns: 80px 1fr 1fr;
+      grid-template-columns: 80px 1fr 1fr;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -107,6 +119,8 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 10px;
+  width: 100%;
+  margin-bottom: 30px;
 }
 
 .card .info_card .plan picture {
@@ -116,5 +130,55 @@ body {
 .card .info_card .plan picture img {
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+.card .info_card .plan .info_plan {
+  -ms-grid-column-align: left;
+      justify-self: left;
+}
+
+.card .info_card .plan .info_plan p {
+  text-align: left;
+  margin: 0;
+}
+
+.card .info_card .plan .change_plan {
+  justify-self: flex-end;
+  color: var(--Bright-blue);
+  font-weight: 700;
+}
+
+.card .info_card .btn_pay {
+  background: var(--Bright-blue);
+  width: 100%;
+  border-radius: 10px;
+  color: #FFF;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 17px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-bottom: 20px;
+  -webkit-box-shadow: 0px 17px 17px 6px rgba(112, 110, 187, 0.24);
+          box-shadow: 0px 17px 17px 6px rgba(112, 110, 187, 0.24);
+  -webkit-transition: 300ms ease-out;
+  transition: 300ms ease-out;
+}
+
+.card .info_card .btn_pay:hover {
+  -webkit-box-shadow: 0px 9px 8px -4px rgba(112, 110, 187, 0.24);
+          box-shadow: 0px 9px 8px -4px rgba(112, 110, 187, 0.24);
+}
+
+.card .info_card .cancelar {
+  text-align: center;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--Desaturated-blue);
+}
+
+.card .info_card .cancelar:hover {
+  text-decoration: underline;
 }
 /*# sourceMappingURL=style.css.map */
