@@ -11,6 +11,7 @@
     --Dark-blue: hsl(223, 47%, 23%);
 }
 *{
+    -webkit-font-smoothing: antialiased;
     font-family: 'Red Hat Display', sans-serif;
     font-size: 16px;
 }
@@ -23,6 +24,7 @@ p{
     color: var(--Desaturated-blue);
     text-align: left;
     line-height: 1.5;
+    margin: 0;
 }
 picture{
     display: inline-block;
@@ -31,6 +33,7 @@ img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    -webkit-user-drag: none;
 }
 body{
     background: var(--Pale-blue) url('../images/pattern-background-desktop.svg')no-repeat top;
@@ -54,7 +57,7 @@ body{
 
     > picture{
         max-height: 220px;
-        margin-bottom: 60px;
+        margin-bottom: 10%;
         overflow: hidden;
 
         img{
@@ -72,7 +75,7 @@ body{
         box-sizing: border-box;
 
         >p{
-            padding: 0 30px;
+            padding: 20px 30px;
             box-sizing: border-box;
             text-align: center;
         }
@@ -86,7 +89,7 @@ body{
             box-sizing: border-box;
             border-radius: 10px;
             width: 100%;
-            margin-bottom: 30px;
+            margin-bottom: 8%;
 
             picture{
                 width: 50px;
@@ -105,6 +108,10 @@ body{
                 justify-self: flex-end;
                 color: var(--Bright-blue);
                 font-weight: 700;
+                transition: 300ms ease;
+                &:hover{
+                    color: #746DEF;
+                }
             }
         }
         .btn_pay{
@@ -123,6 +130,7 @@ body{
 
             &:hover{
                 box-shadow: 0px 9px 8px -4px rgba(112, 110, 187, 0.24);
+                background: #746DEF;
             }
         }
         .cancelar{
@@ -130,9 +138,26 @@ body{
             font-weight: 700;
             text-decoration: none;
             color: var(--Desaturated-blue);
+            transition: 300ms ease;
+
             &:hover{
                 text-decoration: underline;
+                color: #474747;
             }
+        }
+    }
+}
+
+.attribution{
+    font-size: 14px;
+    text-align: center;
+    a{
+        font-size: 14px;
+        color: var(--Bright-blue);
+        font-weight: 700;
+        text-decoration: none;  
+        &:hover{
+            text-decoration: underline;
         }
     }
 }
@@ -144,6 +169,26 @@ body{
 @media screen and (max-width: 768px){
     
 }
-@media screen and (max-width: 400px){
-    
+@media screen and (max-width: 480px){
+    body{
+        background-size: cover;
+    }
+    h1{
+        font-size: 1.5em;
+    }
+    p{
+        font-size: 15px;
+    }
+    .card > picture{
+        margin-bottom: 8%;
+    }
+    .card .info_card{
+        padding: 0 20px 20px;
+    }
+    .card .info_card > p{
+        padding: 20px 0;
+    }
+    .card .info_card .plan{
+        padding: 14px;
+    }
 }
